@@ -16,7 +16,7 @@ A smart understanding of which waterpoints will fail can improve maintenance ope
 
 The goal is to predict the operating condition of a waterpoint for each record in the dataset.
 
-![img](./viz/pumps_scatter.png)
+![img](./img/pumps_scatter.png)
 
 ## Data
 
@@ -68,50 +68,41 @@ The labels in this dataset are simple. There are three possible values:
 - functional needs repair - the waterpoint is operational, but needs repairs
 - non functional - the waterpoint is not operational
 
+![img](./img/labels_dist.png)
+
 ## Methods
 
-
+Machine learning - Multiclass classification with XGBoost
 
 
 ## Results
 
-Key factors that has the most significant impact on the classification results:
-- Square footage - a 10% increase in the house square footage leads to a 8% increase in price
-- Waterfront properties - the price of the house increases by 107% if waterfront equals 1
-- Distance from Seattle/Bellevue - a 10% increase in distance from the epicenter leads to a 3% decrease in price
-- Basement - the price of the house increases by 32% if the house has a basement (equals 1)
-- Zip code - the price of the house increases by 22% when increasing the zip code category by 1
+Key variables that have the most significant impact on the classification results:
 
-![img](./viz/feature_imp.png)
+![img](./img/feature_imp.png)
 
 
 ## Conclusions
 
-This analysis leads to three conclusions regarding the price and the most significant factors that have an impact on the price:
-
-- **Waterfront properties can increase the price over 100%** Properties that face the waterfront are significantly more expensive than other similiar properties. 
-- **Price of property is affected by the mean property price in a given zipcode.** The neighbourhood and price levels in each zipcode has an impact on the price. 
-- **Location, location, location** The closer the property is located to Seatlle and Bellevue the more expensive it gets. Every 10% increase in the distance from the epicenter leads to a 3% decrease in price
-
-### Next Steps
-
-Using the prediction model can help to eastimate the property price and and find properties with a price increase potential when searching for a house. The model also helps to estimate the best list and sale price range:
-
-- **Good tool to find an investment property** If you're looking for a property below the market price, this tool can help to find, check and compare the house price with the estimated market price.
-- **Find out what's the best list and sale price** It's always the biggest question mark what price I should list and sell my house for. Use the model to find the right one and know the wiggle room. 
+The model accurancy was approximately 71%. 
 
 
 ## For More Information
 
-See the full analysis in the [Jupyter Notebook](./LR Model - Test 9.ipynb) or review this [presentation](./KING COUNTY HOUSE SALES - LINEAR REGRESSION MODEL.pdf).
+See the full analysis in the [Jupyter Notebook](./Model_training.ipynb) or review this [presentation](./Pump It Up Presentation.pdf).
 
 ## Repository Structure
 
 ```
 ├── img
 ├── README.md
-├── kc_house_data.csv
-├── df_processed.pickle
-├── LR Model - Test 9.ipynb
-└── KING COUNTY HOUSE SALES - LINEAR REGRESSION MODEL.pdf
+├── Water_Table_Submission_format.csv
+├── Water_Table_Test_set_values.csv
+├── Water_Table_Training_set_labels.csv
+├── Water_Table_Training_set_values.csv
+├── X_processed.pickle
+├── Submission.ipynb
+├── Model_training.ipynb
+├── EDA.ipynb
+└── Pump It Up Presentation.pdf
 ```
